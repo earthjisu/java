@@ -1,0 +1,13 @@
+
+.right{
+    text-align: right;
+    vertical-align: top;
+}
+
+#amu:checked{
+    background-color:cornflowerblue;
+}
+
+#flexRadioDefault1:checked{
+    background-color: lightblue;
+}

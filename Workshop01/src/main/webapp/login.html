@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 창</title>
+</head>
+<body>
+	<form id=frmLogin method=get action=login encType='uft-8'>
+		아이디:<input type=text name=user_id><br>
+		비밀번호:<input type=password name=user_pw><br> 
+		<!-- 관심분야:<input type=checkbox name=subject value='Java'>자바
+		<input type=checkbox name=subject value='Javascript'>자바스크립트
+		<input type=checkbox name=subject value='JQuery'>jQuery<br>
+		<input type=checkbox name=subject value='Python'>파이썬
+		<input type=checkbox name=subject value='php'>PHP
+		<input type=checkbox name=subject value='C++'>C++<br>
+		<input type=checkbox name=subject value='PL/SQL'>PL/SQL
+		<input type=checkbox name=subject value='Pascal'>파스칼
+		<input type=checkbox name=subject value='Django'>장고<br>-->
+		<input type=submit value='로그인'><input type=reset value='다시입력'>
+	</form>
+</body>
+<script src='https://code.jquery.com/jquery-3.5.1.js'></script>
+<script>
+$(document)
+.on('submit','#frmLogin',function(){
+	let userid=$('input[name=user_id]').val();
+	console.log('userid ['+userid+']');
+	let passwd=$('input[name=user_pw]').val();
+	console.log('indexOf ['+userid.indexOf(' ')+']');
+	if(userid=='' || userid==null || userid.indexOf(' ')>-1){
+		alert('유저아이디가 유효하지 않습니다.');
+		return false;
+	}
+	if(passwd=='' || passwd==null || passwd.indexOf(' ')>-1){
+		alert('비밀번호가 잘못된 값입니다.');
+		return false;
+	}
+	return true;
+})
+</script>
+</html>
